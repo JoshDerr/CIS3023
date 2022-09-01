@@ -19,33 +19,37 @@
             
             <form id = "email_form" name = "email_form" action = "join.html" onsubmit = "return validateEmailForm()" method = "get">
                 
-                <label for = "email_address1">Email Address:</label>
-                <input type = "email" id = "email_address1" name = "email_address1" required>
-                <span id = "email_address1_error" class = "blue">*</span>
-                <br>
+                <div class = "fields">
                 
-                <label for = "email_address2">Re-enter Email Address</label> 
-                <input type = "email" id = "email_address2" name = "email_address2" title = "Re-Enter the same address" placeholder = "Re-enter the address" required>
-                <span id = "email_address2_error" class = "blue">*</span>
-                <br>
+                    <label for = "email_address1">Email Address:</label>
+                    <input type = "email" id = "email_address1" name = "email_address1" required>
+                    <span id = "email_address1_error" class = "blue">*</span>
+                    <br>
+                    
+                    <label for = "email_address2">Re-enter Email Address</label> 
+                    <input type = "email" id = "email_address2" name = "email_address2" title = "Re-Enter the same address" placeholder = "Re-enter the address" required>
+                    <span id = "email_address2_error" class = "blue">*</span>
+                    <br>
+                    
+                    <label for = "first_name">First Name</label>
+                    <input type = "text" id = "first_name" name = "first name" required>
+                    <span id = "first_name_error" class = "green">*</span>
+                    <br>
+                    
+                    <label for = "birth_date">Birth Date</label>
+                    <input type = "date" id = "birth_date" name = "birth_date" required>
+                    <span id = "birth_date_error" class = "green">*</span>
+                    <br>
+                    
+                    <label for = "color_choice">Select Color:</label>
+                    <input type = "color" id = "color_choice" value = "#00FF00">
+                    <br>
+                    
+                    <label>&nbsp;</label>
+                    <input type = "submit" id = "join_list" class = "input_button" value = "Join our list">
+                    <input type = "reset" id = "reset_list" class = "input_button" name = "reset_list">
                 
-                <label for = "first_name">First Name</label>
-                <input type = "text" id = "first_name" name = "first name" required>
-                <span id = "first_name_error" class = "green">*</span>
-                <br>
-                
-                <label for = "birth_date">Birth Date</label>
-                <input type = "date" id = "birth_date" name = "birth_date" required>
-                <span id = "birth_date_error" class = "green">*</span>
-                <br>
-                
-                <label for = "color_choice">Select Color:</label>
-                <input type = "color" id = "color_choice" value = "#00FF00">
-                <br>
-                
-                <label>&nbsp;</label>
-                <input type = "submit" id = "join_list" value = "Join our list">
-                <input type = "reset" id = "reset_list" name = "reset_list">
+                </div>
                 
             </form>
             
