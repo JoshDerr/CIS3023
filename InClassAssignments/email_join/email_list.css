@@ -70,11 +70,18 @@ span {
 
 .input_button {
     border-radius: 6px;
-    background: rgb(37, 204, 29);
     background-image: linear-gradient(to bottom right, seagreen, springgreen);
     padding: 2px;
     width: 80px;
     height: 25px;
+}
+
+.input_button:hover {
+    background: rgb(37, 204, 29);
+}
+
+footer {
+    color: green;
 }
 
 /*
@@ -87,9 +94,5 @@ span {
     width: 40 px;
     margin-top: 2em;
     margin-bottom: 2em; 
-}
-
-footer {
-    color: green;
 }
 */
