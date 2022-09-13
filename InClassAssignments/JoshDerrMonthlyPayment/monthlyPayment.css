@@ -1,0 +1,99 @@
+body {
+    font-family: Garamond, serif;
+    background-color: honeydew;
+    margin: 0 auto;
+    width: 670px;
+    border: 5px solid mediumseagreen;
+    border-radius: 30px;
+}
+
+/*
+    
+    fieldset {
+    
+        margin-bottom: 10px;
+        border-style: groove;
+        border-style: none;
+        border-width: 5px;
+        
+    }
+ */
+
+main {
+    
+        padding: 0.25em;
+        margin: 0.25em;
+        background: rgb(200, 200, 100);
+        background-image: linear-gradient(to bottom right, #84c693, white);
+        border: 0.5px groove rgb(0, 0, 0);
+        border-radius: 20px;
+        
+}
+
+h1 {
+    color: black;
+    margin-bottom: .5em;
+    background-color: #6eda6e73;
+    border-radius: 10px;
+}
+
+label {
+    float: left;
+    width: 12em;
+    text-align: right;
+}
+
+input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+    width: 25%;
+}
+
+input:focus {
+    background-color: #d66eda73;
+}
+
+input[text] {
+    border-style: groove;
+}
+
+span {
+    color: black;
+}
+
+.black {
+    color: black;
+}
+
+.big {
+    font-size: 300%;
+}
+
+.input_button {
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom right, seagreen, springgreen);
+    padding: 2px;
+    width: 80px;
+    height: 25px;
+}
+
+.input_button:hover {
+    background: rgb(37, 204, 29);
+}
+
+footer {
+    color: green;
+}
+
+/*
+.bottom_of_group {
+    margin-bottom: 2em;
+}
+
+.backImage {
+    height: 40px;
+    width: 40 px;
+    margin-top: 2em;
+    margin-bottom: 2em; 
+}
+*/
