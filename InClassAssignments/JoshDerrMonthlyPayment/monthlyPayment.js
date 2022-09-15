@@ -12,7 +12,6 @@ var click = function() {
     
     if (fullName == "") {        
         $("monthly_payment").value = "";
-
     }
     
     else if (initialLoanAmount < 0 || monthsOfLoan < 0 || annualInterest < 0 || annualInterest > 100) {    
