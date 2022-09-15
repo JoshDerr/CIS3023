@@ -10,14 +10,16 @@ var click = function() {
     var monthlyInterestRate = annualInterest / 1200;
     var monthlyPayment;
     
-    if (fullName == "") {
+    if (fullName == "") {        
         $("monthly_payment").value = "";
+
     }
-    else if (initialLoanAmount < 0 || monthsOfLoan < 0 || annualInterest < 0 || annualInterest > 100) {
-        $("monthly_payment").value = "";
-    }
-    else {
     
+    else if (initialLoanAmount < 0 || monthsOfLoan < 0 || annualInterest < 0 || annualInterest > 100) {    
+        $("monthly_payment").value = "";
+    }
+    
+    else {
         monthlyPayment = initialLoanAmount * (monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, monthsOfLoan * -1)));
             
         $("monthly_payment").value = "$" + monthlyPayment.toFixed(2);
