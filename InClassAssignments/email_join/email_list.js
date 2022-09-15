@@ -1,35 +1,60 @@
-var $ = function(id) {
-    return document.getElementById(id);
-};
+<!DOCTYPE html>
 
-var click = function() {
-    var fullName = $("full_name").value;
-    var initialLoanAmount = parseFloat($("initial_loan_amount").value);
-    var monthsOfLoan = parseFloat($("months_of_loan").value);
-    var annualInterest = parseFloat($("annual_interest").value);
-    var monthlyInterestRate = annualInterest / 1200;
-    var monthlyPayment;
+<html lang = "en">
+
+    <head>
+        
+        <meta charset = "UTF-8">
+        <title>Join Email List</title>
+        <link rel = "Stylesheet" href = "email_list.css">
+        <script src = "email_list.js"></script>
+        
+    </head>
     
-    if (fullName == "") {
-        $("monthly_payment").value = "";
-    }
-    else if (initialLoanAmount < 0 || monthsOfLoan < 0 || annualInterest < 0 || annualInterest > 100) {
-        $("monthly_payment").value = "";
-    }
-    else {
-    
-        monthlyPayment = initialLoanAmount * (monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, monthsOfLoan * -1)));
+    <body>
+        
+        <main>
             
-        $("monthly_payment").value = "$" + monthlyPayment.toFixed(2);
+            <h1>Please join our email list</h1>
+            
+            <form id = "email_form" name = "email_form" action = "join.html" onsubmit = "return validateEmailForm()" method = "get">
+                
+                <div class = "fields">
+                
+                    <label for = "email_address1">Email Address:</label>
+                    <input type = "email" id = "email_address1" name = "email_address1" required>
+                    <span id = "email_address1_error" class = "blue">*</span>
+                    <br>
+                    
+                    <label for = "email_address2">Re-enter Email Address</label> 
+                    <input type = "email" id = "email_address2" name = "email_address2" title = "Re-Enter the same address" placeholder = "Re-enter the address" required>
+                    <span id = "email_address2_error" class = "blue">*</span>
+                    <br>
+                    
+                    <label for = "first_name">First Name</label>
+                    <input type = "text" id = "first_name" name = "first_name" required>
+                    <span id = "first_name_error" class = "green">*</span>
+                    <br>
+                    
+                    <label for = "birth_date">Birth Date</label>
+                    <input type = "date" id = "birth_date" name = "birth_date" required>
+                    <span id = "birth_date_error" class = "green">*</span>
+                    <br>
+                    
+                    <label for = "color_choice">Select Color:</label>
+                    <input type = "color" id = "color_choice" value = "#00FF00">
+                    <br>
+                    
+                    <label>&nbsp;</label>
+                    <input type = "submit" id = "join_list" class = "input_button" value = "Join our list">
+                    <input type = "reset" id = "reset_list" class = "input_button" name = "reset_list">
+                
+                </div>
+                
+            </form>
+            
+        </main>
 
-        return false;
-    }
+    </body>
     
-};
-
-window.onload = function(){
-    $("initial_loan_amount").value = "";
-    $("months_of_loan").value = "";
-    $("annual_interest").value = "";
-    $("calculate").onclick = click;
-};
+</html>
