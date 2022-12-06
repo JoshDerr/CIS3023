@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title>Average Array</title>
+        
+        <script>
+            
+            function main() {
+                var userArray = [];
+                var arrayConvertedToString = "";
+                
+                for (var i = 0; i < (Math.floor(Math.random() * 50) + 1); i++) {
+                    userArray[i] = Math.floor(Math.random() * 100) + 1;
+                }//for
+                
+                alert("The size of the array is " + i + " numbers long");
+                
+                for (var l = 0; l < userArray.length ; l++) {
+                    if (l < userArray.length - 1) {
+                        arrayConvertedToString += userArray[l] + ", ";
+                    }
+                    else {
+                        arrayConvertedToString += "and " + userArray[l];
+                    }
+                }//for
+                
+                alert("The numbers in the array are " + arrayConvertedToString);
+                
+                alert("The average of the numbers in the array is " + averageArray(userArray));
+                
+            }//main
+            
+            function averageArray(userArray) {
+                var sum = 0;
+                var average = 0;
+                
+                if (!Array.isArray(userArray)) {
+                    return false;
+                }//if
+                
+                else if (userArray.length == 0) {
+                    return false;
+                }//else if
+                
+                else {
+                    for (var j = 0; j < userArray.length; j++) {
+                        if (isNaN(parseFloat(userArray[j]))) {
+                            return false;
+                        }
+                    }//for
+                    
+                    for (k = 0; k < userArray.length; k++) {
+                        sum += userArray[k];
+                    }//for
+                    
+                    average = sum / userArray.length;
+                    
+                    return average;
+                }//else
+                
+            }//averageArray
+            
+            main();
+            
+        </script>
+
+    </head>
+
+    <body>
+
+
+    </body>
+    
+</html>
