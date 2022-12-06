@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <meta charset = "UTF-8">
+        <title>Insert Underscores</title>
+        <script>
+            function main() {
+                var userInput = "";
+                
+                for ( ; ; ) {
+                    
+                    userInput = prompt("Please enter a string or '***' to quit");
+                    
+                    if (userInput == "***") {
+                        alert("Thanks for using the underscore checker");
+                        break;
+                    }
+                    else {
+                        alert(insertUnderscores(userInput));
+                    }
+                    
+                }//for
+                
+            }//main
+            
+            function insertUnderscores(userString) {
+                var uppercaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var stringWithUnderscores = "";
+                
+                for (i = 0; i < userString.length; i++) {
+                    
+                    if (uppercaseAlphabet.includes(userString.charAt(i))) {
+                        stringWithUnderscores += "_" + userString.charAt(i);
+                    }
+                    else {
+                        stringWithUnderscores += userString.charAt(i);
+                    }
+                    
+                }//for
+                
+                return (stringWithUnderscores);
+                
+            }//insertUnderscores
+            
+            main();
+        </script>
+    
+    </head>
+    
+    <body>
+
+    </body>
+
+</html>

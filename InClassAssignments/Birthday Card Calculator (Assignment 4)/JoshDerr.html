@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>Duplicate Birthday Calculator</title>
+        
+        <script>
+            function main() {
+                for ( ; ; ) {
+                    numTrials = parseFloat(prompt("Enter number of trials"));
+                    
+                    if (numTrials > 0 && !isNaN(numTrials)) {
+                        break;
+                    }//if
+                    else {
+                        alert("Please enter a positive number for the number of trials");
+                    }//else
+                }//for
+                
+                numDuplicateBirthdays = 0;
+                
+                for (var i = 0; i < numTrials; i++) {
+                    if (duplicateBirthdayIdentifier()) {
+                        numDuplicateBirthdays++;
+                    }//if
+                }//for
+                
+                var probDuplicateBirthdays = numDuplicateBirthdays / numTrials;
+                
+                alert("The probability of two or more birthdays being on the same day is: \n" + probDuplicateBirthdays + " or " + probDuplicateBirthdays * 100 + "%");
+                
+            }//main
+            
+            function duplicateBirthdayIdentifier() {
+                var duplicateBirthdays = 0;
+                var numCustomers = 25;
+                var customerBirthdays = [];
+                
+                for (var j = 0; j < numCustomers; j++) {
+                    customerBirthdays[j] = Math.floor(Math.random() * 365) + 1;
+                }//for
+                
+                for (var k = 0; k < numCustomers; k++) {
+                    for (var l = 0; l < k; l++) {
+                        if (customerBirthdays[l] == customerBirthdays[k]) {
+                            duplicateBirthdays++;
+                        }//if
+                    }//for
+                }//for
+                
+                if (duplicateBirthdays >= 1) {
+                    return true;
+                }//if
+                else {
+                    return false;
+                }//else
+                
+            }//repeatBirthdayIdentifier
+            
+            main();
+            
+        </script>
+    
+    </head>
+    
+    <body>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Multiplication Table Calculator</title>
+
+        <script>
+             function main() {
+               
+                var lowerBound = 0;
+                var upperBound = 0;
+                var upperMultiplicate = 12;
+                
+                for (lowerBound = parseInt(prompt("Please enter a lower bound number:")); isNaN(lowerBound) || lowerBound <= 0; lowerBound = parseInt(prompt("ERROR \nPlease enter a lower bound that is a positive integer:")));
+                
+                for (upperBound = parseInt(prompt("Please enter an upper bound number:")); upperBound <= lowerBound || isNaN(upperBound) || upperBound <= 0; upperBound = parseInt(prompt("ERROR \nPlease enter an upper bound that is a positive integer and greater than the lower bound:")));
+            
+                for (upperMultiplicate = parseInt(prompt("Please enter an upper multiplicant number:")); isNaN(upperMultiplicate) || upperMultiplicate <= 1; upperMultiplicate = parseInt(prompt("ERROR \nPlease enter an upper multiplicate number that is an integer greater than one:")));
+            
+                alert(getMultiplicationTable(lowerBound, upperBound, upperMultiplicate));
+                
+            }//main
+                
+            function getMultiplicationTable(lowerBound_par, upperBound_par, umultiplicant_par) {
+                var tables = "MULTIPLICATION TABLES \n\n";
+               
+                for (var i = lowerBound_par; i <= upperBound_par; i++) {
+                    
+                    for (var j = 1; j <= umultiplicant_par; j++) {
+                    
+                        tables += i + " * " + j + " = " + (i * j) + "\n";
+                   
+                    }//j
+                    
+                    tables += "************\n";
+               
+                }//i
+               
+               return tables; 
+                
+            }//getMultiplicationTable
+            
+            main();
+            
+        </script>
+
+    </head>
+
+    <body>
+
+
+    </body>
+
+</html>

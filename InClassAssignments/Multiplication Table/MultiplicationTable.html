@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+    
+        <meta charset = "UTF-8">
+        <title>Multiplication Table</title>
+
+    </head>
+
+    <body>
+        
+        <script>
+            function genMultiplicationTable() {
+                
+                var multTable = [];
+                var outputStr = "";
+                
+                for (var i = 2; i < 21; i++) {
+                   
+                    for (var j = 1; j < 13; j++) {
+                        
+                        multTable[i] = [];
+                        
+                        multTable[i][j] = i * j;
+                        
+                        outputStr += multTable[i][j] + " ";
+                        
+                    }//forj
+                    
+                    outputStr += "\n";
+                    
+                }//fori
+                
+                alert(outputStr);
+                
+            }//genMultiplicationTable
+            
+            genMultiplicationTable();
+            
+        </script>
+
+    </body>
+
+</html>

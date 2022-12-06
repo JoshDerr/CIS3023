@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+    
+        <title>Fun with Arrays</title>
+        
+        <script>
+            var studentName = [];
+            var outputString = "";
+            
+            for (i = 0; i < 2; i++) {
+                studentName[i] = prompt("Enter next name");
+            }//for
+            
+            studentName[studentName.length] = "Jill";
+            
+            studentName[100] = "John";
+            
+            /*
+            for (var i = 0; i < studentName.length; i++) {
+                outputString += studentName[i] + " \n";
+            }//for
+            */
+            
+            for (var i in studentName) {
+                outputString += studentName[i] + " \n";
+            }//for
+            
+            alert(outputString);
+        </script>
+
+    </head>
+    
+    <body>
+
+
+    </body>
+
+</html>

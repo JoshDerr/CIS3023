@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>Dice</title>
+    
+        <script>
+            function main() {
+                const EXPTITLE = "Getting at least 6 on 2 dice";
+                
+                for ( ; ; ) {
+                    numTrials = parseFloat(prompt("Enter number of trials"));
+                    
+                    if (numTrials > 0 && !isNaN(numTrials)) {
+                        break;
+                    }//if
+                    else {
+                        alert("Please enter a positive number for the number of trials");
+                    }//else
+                }//for
+                
+                var numDiceTotalsAtLeast6 = 0;
+                var numSuccesses20SidedDiceMatches = 0;
+                                    
+                for (var i = 0; i < numTrials; i++) {
+                    if (atLeast6On2Dice()) {
+                        numDiceTotalsAtLeast6++;
+                    }//if
+                }//for
+                
+                for (var j = 0; j < numTrials; j++) {
+                    if (twoEqualValuesOn20SidedDice()) {
+                        numSuccesses20SidedDiceMatches++;
+                    }
+                }//for
+                
+                var probDiceTotalsAtLeast6 = numDiceTotalsAtLeast6 / numTrials;
+                
+                var prob20SidedDiceMatches = numSuccesses20SidedDiceMatches / numTrials;
+                
+                alert("Probability of " + EXPTITLE + " is: \n" + probDiceTotalsAtLeast6.toFixed(4) + "\n");
+                
+                alert("Probability of a match on 3 rolls of a 20 sided die is: \n" + prob20SidedDiceMatches.toFixed(4) + "\n");
+            
+            }//main
+            
+            function tossADice() {
+                return ((Math.random() * 6) + 1);
+            }//tossADice
+            
+            function atLeast6On2Dice() {
+                var dice1 = tossADice();
+                var dice2 = tossADice();
+                
+                if (dice1 + dice2 >= 6) {
+                    return true;
+                }//if
+                else {
+                    return false;
+                }//else
+                
+            }//atLeast6On2Dice
+            
+            function tossA20SidedDice() {
+                return (Math.floor(Math.random() * 20) + 1);
+            }//tossA20SidedDice
+            
+            function twoEqualValuesOn20SidedDice() {
+                var dice1 = tossA20SidedDice();
+                var dice2 = tossA20SidedDice();
+                var dice3 = tossA20SidedDice();
+                
+                if (dice1 == dice2 || dice2 == dice3 || dice1 == dice3) {
+                    return true;
+                }//if
+                else {
+                    return false;
+                }//else
+                
+            }//twoEqualValuesOn20SidedDice
+            
+            main();
+            
+        </script>
+    
+    </head>
+    
+    <body>
+
+
+    </body>
+    
+</html>

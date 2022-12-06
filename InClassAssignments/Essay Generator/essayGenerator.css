@@ -1,0 +1,47 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333366;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+main {
+    width: 1400px;
+    margin: 10px auto;
+    padding: 5px 20px;
+    background: white;
+    border: thick solid black;
+    border-radius: 20px;
+}
+
+.input_words{
+    display: inline;
+    color: green;
+    border-color: #f2be36;
+    background-color: white;
+    height: 200px;
+    width: 200px;
+}
+
+#essay {
+    color: blue;
+    border-color: #f2be36;
+    border-radius: 8px;
+    background-color: white;
+    height: 400px;
+    width: 800px;
+}
+
+#content label {
+    display: block;
+    width: 10em;
+    text-align: right;
+    padding-right: 1em;
+    float: left;
+}
+
+#content input {
+    
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>Monte Carlo Experiment</title>
+    
+        <script>
+            function main() {
+                const EXPTITLE = "Getting a head on a coin toss";
+                
+                for ( ; ; ) {
+                    numTrials = parseFloat(prompt("Enter number of trials"));
+                    
+                    if (numTrials > 0 && !isNaN(numTrials)) {
+                        break;
+                    }//if
+                    else {
+                        alert("Please enter a positive number for the number of trials");
+                    }//else
+                }//for
+                
+                var numSuccessesOneCoin = 0;
+                var numSuccessesFiveCoins = 0;
+                var numSuccessesTwentyCoins = 0;
+                                    
+                for (var i = 0; i < numTrials; i++) {
+                    if (oneHeadCoinToss()) {
+                        numSuccessesOneCoin++;
+                    }//if
+                }//for
+                
+                for (var j = 0; j < numTrials; j++) {
+                    if (fiveHeadCoinToss()) {
+                        numSuccessesFiveCoins++;
+                    }//if
+                }//for
+                
+                for (var k = 0; k < numTrials; k++) {
+                    if (fiveHeadStreakCoinToss()) {
+                        numSuccessesTwentyCoins++;
+                    }//if
+                }//for
+                
+                var probSuccessOneCoin = numSuccessesOneCoin / numTrials;
+                
+                var probSuccessFiveCoins = numSuccessesFiveCoins / numTrials;
+                
+                var probSuccessTwentyCoins = numSuccessesTwentyCoins / numTrials;
+                
+                alert("Probability of " + EXPTITLE + " is: \n" + probSuccessOneCoin.toFixed(4) + "\n");
+                
+                alert("Probability of getting 5 heads from 10 coin tosses is: \n" + probSuccessFiveCoins.toFixed(4) + "\n");
+                
+                alert("Probability of getting 5 heads in a row from 20 coin tosses is: \n" + probSuccessTwentyCoins.toFixed(4) + "\n");
+            
+            }//main
+            
+            function oneHeadCoinToss() {
+                var coin = Math.floor(Math.random() * 2) + 1;
+                
+                if (coin == 1) {
+                    return true;
+                }//if
+                else {
+                    return false;
+                }//else
+                
+            }//oneHeadCoinToss
+            
+            function fiveHeadCoinToss() {
+                //Get 5 heads off 10 coin tosses
+                var numHeads = 0;
+                
+                for (var k = 0; k < 10; k++) {
+                    var coin = Math.floor(Math.random() * 2) + 1;
+                    
+                    if (coin == 1) {
+                        numHeads++;
+                    }//if
+                
+                }//for
+                
+                if (numHeads >= 5) {
+                    return true;
+                }//if
+                else {
+                    return false;
+                }//else
+                
+            }//fiveHeadCoinToss
+            
+            /*
+            
+            OR
+            
+            function fiveHeadCoinToss() {
+                var numHeads = 0;
+                
+                for (var i = 0; i < 10; i++) {
+                    
+                    if (oneHeadCoinToss()) {
+                        numHeads++;
+                    }//if
+                    
+                }//for
+                
+                return (numHeads >= 5);
+                
+            }//fiveHeadCoinToss
+            
+            */
+            
+            function fiveHeadStreakCoinToss() {
+                var streakCount = 0;
+                
+                for (var i = 0; i < 20; i++) {
+                    
+                    if (oneHeadCoinToss()) {
+                    
+                        streakCount++;
+                    
+                            if (streakCount >= 5) {
+                                break;
+                                
+                            }//if
+                    
+                        continue;
+                    
+                    }//if
+                    
+                    streakCount = 0;  
+                
+                }//for
+                
+                return (streakCount >= 5);
+                
+            }//fiveHeadStreakCoinToss
+            
+            main();
+            
+        </script>
+    
+    </head>
+    
+    <body>
+
+
+    </body>
+    
+</html>

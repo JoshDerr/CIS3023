@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <title>Do Expertiment</title>
+
+        <script>
+            function main() {
+                var experimentResult = [];
+                var numTrials = -1;
+                
+                for ( ; ; ) {
+                    numTrials = parseFloat(prompt("Enter number of trials"));
+                    
+                    if (numTrials > 0 && !isNaN(numTrials)) {
+                        break;
+                    }//if
+                    else {
+                        alert("Please enter a positive number for the number of trials");
+                    }//else
+                }//for
+                
+                var sumOfArraySize = 0;
+                var sumOfAverages = 0;
+                //var sumOfMedians = 0;
+                                    
+                for (var j = 0; j < numTrials; j++) {
+                    experimentResult = doExperiment();
+                    sumOfArraySize += experimentResult[0];
+                    sumOfAverages += experimentResult[1];
+                    //sumOfMedians += experimentResult[2];
+                }//for
+                
+                var averageOfAverages = sumOfAverages / numTrials;
+                var averageOfSize = sumOfArraySize / numTrials;
+                //var averageOfMedians = sumOfMedians / numTrials;
+                
+                alert("Average of arrays size after " + numTrials + " trials is: " + averageOfSize.toFixed(4));
+                alert("Average of means after " + numTrials + " trials is: " + averageOfAverages.toFixed(4));
+                //alert("Average of medians after " + numTrials + " trials is: " + averageOfMedians.toFixed(4));
+            
+            }//main
+            
+            function doExperiment() {
+                var arraySize = Math.floor(Math.random() * 50) + 1;
+                
+                var randomArray = new Array(arraySize);
+                
+                for (var i = 0; i < randomArray.length; i++) {
+                    randomArray[i] = Math.floor(Math.random() * 100) + 1;
+                }//for
+                
+                var resultArray = [];
+                
+                resultArray[0] = arraySize;
+                
+                resultArray[1] = averageArray(randomArray);
+                
+                //resultArray[2] = findMedian(randomArray);
+                
+                return (resultArray);
+                
+            }//doExperiment
+            
+            /*
+            function findMedian(randomArray) {
+                var median = 0;
+                var moveArrayValues = 0;
+                
+                for (i = 0; i < randomArray.length; i++) {
+                    for (j = 0; j < i; j++) {
+                        
+                        if (randomArray[j] > randomArray[i]) {
+                            moveArrayValues = randomArray[j];
+                            randomArray[j] = randomArray [i];
+                            randomArray[i] = moveArrayValues;
+                        }//if
+                        
+                        
+                        
+                    }//for
+                }//for
+                
+            }//findMedian
+            */
+            
+            function averageArray(userArray) {
+                var sum = 0;
+                var average = 0;
+                
+                if (!Array.isArray(userArray)) {
+                    return false;
+                }//if
+                
+                else if (userArray.length == 0) {
+                    return false;
+                }//else if
+                
+                else {
+                    for (var j = 0; j < userArray.length; j++) {
+                        if (isNaN(parseFloat(userArray[j]))) {
+                            return false;
+                        }//if
+                    }//for
+                    
+                    for (k = 0; k < userArray.length; k++) {
+                        sum += userArray[k];
+                    }//for
+                    
+                    average = sum / userArray.length;
+                    
+                    return average;
+                }//else
+                
+            }//averageArray
+            
+            main();
+            
+        </script>
+
+    </head>
+    
+    <body>
+
+
+    </body>
+
+</html>
