@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <title>Print Unicode Values</title>
+
+        <script>
+            function main() {
+                var lowerBound;
+                var upperBound;
+            
+                for ( ; ; ) {
+                    lowerBound = parseInt(prompt("Enter lower bound as positive integer"));
+                    
+                    if (!isNaN(lowerBound) && (lowerBound > 0) && (lowerBound < 65535)) {
+                        break;
+                    }
+                    
+                } //for
+                
+                for ( ; ; ) {
+                    upperBound = parseInt(prompt("Enter upper bound as a positive integer, > lower bound"));
+                    
+                    if (!isNaN(upperBound) && (upperBound > 0) && (upperBound > lowerBound) && (upperBound < 65535)) {
+                        break;
+                    }
+                    
+                } //for
+                
+                alert(printUnicodeChars(lowerBound, upperBound));
+                
+            } //main
+            
+            /*
+            function printUnicodeValOfString(strToBePrinted) {
+                var outputStr = "";
+                
+                for (var i = 0; i < strToBePrinted.length; i++) {
+                    outputStr += strToBePrinted[i] + "  " + strToBePrinted.charCodeAt(i) + "\n";
+                } //for
+                
+                return outputStr;
+                
+            } //printUnicodeValOfString
+            */
+            
+            function printUnicodeChars(lower, upper) {
+                lower = parseInt(lower);
+                upper = parseInt(upper);
+                
+                if (isNaN(upper) || isNaN(lower)) {
+                    return "lower and upper parameters need to be integers";
+                }
+                
+                if (lower >= upper) {
+                    return "lower must be less than upper";
+                }
+                
+                var outputStr = "";
+                
+                for (var i = lower; i < upper + 1; i++) {
+                    outputStr += i + "  " + String.fromCharCode(i) + "\n";
+                } //for
+                
+                return outputStr;
+                
+            } //printUnicodeChars
+            
+            main();
+            
+        </script> 
+
+    </head>
+
+    <body>
+
+
+    </body>
+
+</html>

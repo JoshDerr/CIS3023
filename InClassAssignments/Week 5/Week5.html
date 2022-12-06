@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <script>
+           
+            var lowerBound = -1;
+            var upperBound = -1;
+            var outputString = "";
+            
+            /* lowerBound = prompt("Please enter a lower bound number that is greater than 0");
+            
+            lowerBound = parseInt(lowerBound);
+            
+            do {
+                
+                lowerBound = prompt("Please enter a lower bound number that is greater than 0");
+            
+                lowerBound = parseInt(lowerBound);
+                
+            } while (lowerBound <= 0 || isNaN(lowerBound)); */
+            
+            for (lowerBound = parseInt(prompt("Please enter a lower bound number that is greater than 0")); lowerBound <= 0 || isNaN(lowerBound); lowerBound = parseInt(prompt("Please enter a lower bound number that is greater than 0")));
+            
+            /* upperBound = prompt("Please enter a upper bound");
+            
+            upperBound = parseInt(upperBound);
+            
+             do {
+                
+                upperBound = prompt("Please enter a upper bound greater than the lower bound");
+            
+                upperBound = parseInt(upperBound);
+            
+            } while (isNaN(upperBound) || upperBound < lowerBound); */
+            
+            for (upperBound = parseInt(prompt("Please enter an upper bound greater than the lower bound")); upperBound <= lowerBound || isNaN(upperBound); upperBound = parseInt(prompt("Please enter an upper bound greater than the lower bound")));
+            
+            for (var i = lowerBound; i <= upperBound; i++) {
+                
+                outputString += i + " " + String.fromCharCode(i) + "\n";
+                
+            }
+            
+            alert(outputString);
+            
+        </script>
+    
+    </head>
+
+    <body>
+
+    </body>
+
+</html>

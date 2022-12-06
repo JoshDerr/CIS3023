@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <title>On Click Search Engine</title>
+        
+        <script>
+            var $ = function() {
+                return document.getElementById(id);
+            }
+            
+            var display_click = function() {
+                document.writeln("Welcome to our site!");
+                document.writeln("Today is \"the\" Monday. <br> This is the &lt; h1 &gt; tag. ");
+                document.writeln("<pre>Welcome to our site!");
+                document.writeln("Today is Monday. <pre>");
+                
+                window.open("https://google.com", "mywindow", "width = 800, height = 400");
+            }
+            
+            window.onload = function() {
+                alert("My href is: " + location.href);
+                alert("My host is: " + location.hostname);
+            
+                $("btnDisplay").onclick = display_click;
+            }
+            
+        </script>
+
+    </head>
+    
+    <body>
+        
+        <p>
+            <input type = "button" value = "Search" id = "btnDisplay" />
+        </p>
+
+    </body>
+
+</html>

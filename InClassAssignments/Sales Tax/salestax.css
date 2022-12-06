@@ -1,0 +1,98 @@
+body {
+    font-family: Garamond, serif;
+    background-color: honeydew;
+    margin: 0 auto;
+    width: 670px;
+    border: 5px solid mediumseagreen;
+    border-radius: 12px;
+    padding: 0 2em 1em;
+}
+
+/*
+    main {
+    
+        padding: 0.25em;
+        margin: 0.25em;
+        background: rgb(200, 200, 100);
+        background-image: linear-gradient(to bottom right, yellow, white);
+        border: 0.5px groove rgb(200, 200, 100);
+        border-radius: 20px;
+        
+    }
+    
+    fieldset {
+    
+        margin-bottom: 10px;
+        border-style: groove;
+        border-style: none;
+        border-width: 5px;
+        
+    }
+ */
+
+h1 {
+    color: black;
+    margin-bottom: .5em;
+    background-color: lightgreen;
+    border-radius: 10px;
+}
+
+label {
+    float: left;
+    width: 11em;
+    text-align: right;
+}
+
+input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+
+input:focus {
+    background-color: Plum;
+}
+
+input[text] {
+    border-style: groove;
+}
+
+span {
+    color: black;
+}
+
+.black {
+    color: black;
+}
+
+.big {
+    font-size: 300%;
+}
+
+.input_button {
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom right, seagreen, springgreen);
+    padding: 2px;
+    width: 80px;
+    height: 25px;
+}
+
+.input_button:hover {
+    background: rgb(37, 204, 29);
+}
+
+footer {
+    color: green;
+}
+
+/*
+.bottom_of_group {
+    margin-bottom: 2em;
+}
+
+.backImage {
+    height: 40px;
+    width: 40 px;
+    margin-top: 2em;
+    margin-bottom: 2em; 
+}
+*/

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Sales Force Compensation</title>
+
+        <script>
+            var salesPerson = "";
+            var baseSalary = "0";
+            var prevYearSalesTotal = "0";
+            var percentBonus = "0";
+            var finalSalary = "0";
+            var runAgain;
+            
+            for (runAgain = "Y"; runAgain == "Y" || runAgain == "y" || runAgain == "Yes" || runAgain == "yes"; ) {
+                
+                for(salesPerson = prompt("Enter sales person name: \n"); salesPerson.length < 2; salesPerson = prompt("Error \nPlease re-enter a sales person name with at least 2 letters:"));
+                
+                for(baseSalary = parseFloat(prompt("Enter base salary: \n")); isNaN(baseSalary) || baseSalary < 0; baseSalary = parseFloat(prompt("Error \nPlease re-enter base salary as a number greater than 0:")));
+                    
+                for (prevYearSalesTotal = parseFloat(prompt("Enter previous year sales total: \n")); isNaN(prevYearSalesTotal) || prevYearSalesTotal < 0; prevYearSalesTotal = parseFloat(prompt("Error \nPlease re-enter previous year sales total as a number greater than 0:")));
+                
+                if (prevYearSalesTotal > 0 && prevYearSalesTotal < 25000) {
+                    percentBonus = 5 / 100;
+                    
+                    finalSalary = (percentBonus * baseSalary) + baseSalary;
+                }
+                else if (prevYearSalesTotal > 25000 && prevYearSalesTotal < 50000) {
+                    percentBonus = 10 / 100;
+                    
+                    finalSalary = (percentBonus * baseSalary) + baseSalary;
+                }
+                else if (prevYearSalesTotal > 50000 && prevYearSalesTotal < 100000) {
+                    percentBonus = 15 / 100;
+                    
+                    finalSalary = (percentBonus * baseSalary) + baseSalary;
+                }
+                else {
+                    percentBonus = 20 / 100;
+                    
+                    finalSalary = (percentBonus * baseSalary) + baseSalary;
+                }
+                
+                alert("The final salary of " + salesPerson + " is " + finalSalary);
+                
+                var runAgain = prompt("If you would like to run again, please input Yes/Y");
+            }
+            
+            alert("Thanks");
+            
+        </script>
+
+    </head>
+
+    <body>
+
+
+    </body>
+
+</html>

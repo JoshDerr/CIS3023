@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Calculator Refractored</title>
+    
+        <script>
+            var firstInputVariable;
+            var secondInputVariable;
+            var total;
+            
+            function menu() {
+                for (var menuActionSelection = parseInt(prompt("Calculator Menu \n1. Add \n2. Subtract \n3. Multiply \n4. Divide \n5. Exponent \n6. Mean \n7. Quit")); (menuActionSelection < 1) || (menuActionSelection > 7) || (isNaN(menuActionSelection)); menuActionSelection = parseInt(prompt("ERROR, Invalid Selection: \nCalculator Menu \n1. Add \n2. Subtract \n3. Multiply \n4. Divide \n5. Exponent \n6. Mean \n7. Quit")));
+                
+                if (menuActionSelection == 1) {
+                    getnumber();
+                
+                    calculateAddition(firstInputVariable, secondInputVariable);
+                }
+                else if (menuActionSelection == 2) {
+                    getNumber();
+                    
+                    calculateSubtraction(firstInputVariable, secondInputVariable);
+                }
+                else if (menuActionSelection == 3) {
+                    getNumber();
+                    
+                    calculateMultiplication(firstInputVariable, secondInputVariable);
+                }
+                else if (menuActionSelection == 4) {
+                    getNumber();
+                    
+                    calculateDivision(firstInputVariable, secondInputVariable);
+                }
+                else if (menuActionSelection == 5) {
+                    getNumber();
+                    
+                    calculateExponential(firstInputVariable, secondInputVariable);
+                }
+                else if (menuActionSelection == 6) {
+                    var seriesOfNumbers = "";
+                    var meanTotal = 0;
+                    var meanCounter = 0;
+                    
+                    for ( ; ; ) {
+                        seriesOfNumbers = prompt("Please enter a series of numbers or '***' to end:");
+                                
+                        if (seriesOfNumbers == "***") {
+                            break;
+                        }
+                        else if (!isNaN(parseFloat(seriesOfNumbers))) {
+                            meanTotal += parseFloat(seriesOfNumbers);
+                            meanCounter++;
+                        }
+                        else {
+                            alert("ERROR, Invalid Input \nPlease enter a series of numbers or '***' to end:");
+                        }
+                        
+                    }//for
+                    
+                    calculateMean(meanTotal, meanCounter);
+                }
+                else {
+                    quit();
+                }
+            }//menu
+            
+            menu();
+            
+            function getNumber() {
+                for (firstInputVariable = parseFloat(prompt("Enter first number:")); isNaN(firstInputVariable); firstInputVariable = parseFloat(prompt("ERROR, Invalid Input \nEnter first number:")));
+                
+                for (secondInputVariable = parseFloat(prompt("Enter second number:")); isNaN(secondInputVariable); secondInputVariable = parseFloat(prompt("ERROR, Invalid Input \nEnter second number:")));  
+                
+                return (firstInputVariable, secondInputVariable);
+            }//getNumber
+
+            function calculateAddition(firstVariable, secondVariable) {
+                total = firstvariable + secondVariable;
+                
+                alert("Result is: \n" + total);
+                
+                menu();
+            } //calculateAddition
+            
+            function calculateSubtraction(firstVariable, secondVariable) {
+                total = firstVariable - secondVariable;
+                        
+                alert("Result is: \n" + total);
+                
+                menu();
+            } //calculateSubtraction
+            
+            function calculateMultiplication(firstVariable, secondVariable) {
+                total = firstVariable * secondVariable;
+                
+                alert("Result is: \n" + total);
+                
+                menu();
+            } //calculateMultiplication
+            
+            function calculateDivision(firstVariable, secondVariable) {
+                total = firstVariable / secondVariable;
+                
+                alert("Result is: \n" + total);
+                
+                menu();
+            } //calculateDivision
+            
+            function calculateExponential(firstVariable, secondVariable) {
+                total = Math.pow(firstVariable, secondVariable);
+                
+                alert("Result is: \n" + total);
+                
+                menu();
+            } //calculateExponential
+            
+            function calculateMean(totalOfMean, countOfMean) {
+                calculatedMean = totalOfMean / countOfMean;
+                        
+                alert("Result is: \n" + calculatedMean);
+                
+                menu();
+            } //calculateMean
+            
+            function quit() {
+                alert("Thank you for using my calculator, goodbye 🎃");
+            } //quit
+        </script>
+        
+    </head>
+    
+    <body>
+    
+    
+    </body>
+
+</html>
